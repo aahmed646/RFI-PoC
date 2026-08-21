@@ -1,0 +1,14 @@
+name: Deliberate CI failure for Agent P test
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  deliberate-failure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Intentional failure
+        run: |
+          echo "Authorized disposable test: intentional failure"
+          exit 1
